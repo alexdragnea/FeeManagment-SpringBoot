@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student getStudentById(int id) {
+	public Student getStudentByRollNo(int id) {
 		Optional<Student> optional = studentRepository.findById(id);
 		Student student = null;
 		if(optional.isPresent()) {
@@ -41,7 +41,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void deleteStudentById(int id) {
+	public void deleteStudentByRollNo(int id) {
 		this.studentRepository.deleteById(id);
 		
 	}

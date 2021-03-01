@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Fee Management System</title>
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<div class="container">
+		<h1>Fee Management System</h1>
+		<hr>
+		<h2> Add new Student</h2>
+		
+		<form action="#" th:action="@{/saveStudent}" th:object ="${student}", method="POST">
+		<input type="text" th:field = "*{name}" 
+			placeholder="Name" class="form-control mb-4 col-4">
+			
+		<input type="text" th:field = "*{email}" 
+			placeholder="Email" class="form-control mb-4 col-4">	
+		
+		<input type="text" th:field = "*{sex}" 
+			placeholder="Sex" class="form-control mb-4 col-4">
+			
+		<input type="text" th:field = "*{course}" 
+			placeholder="Course" class="form-control mb-4 col-4">
+		
+			<label>Fee</label> 
+		<input type="number" th:field = "*{fee}" 
+			placeholder="Fee" class="form-control mb-4 col-4">
+		
+			<label>Paid</label> 
+		<input type="number" th:field = "*{paid}" 
+			placeholder="Paid" class="form-control mb-4 col-4">
+			
+		<input type="text" th:field = "*{address}" 
+			placeholder="Address" class="form-control mb-4 col-4">
+			
+		<input type="text" th:field = "*{contact}" 
+			placeholder="Contact" class="form-control mb-4 col-4">
+			
+		<button type="submit" class="btn btn-info col-2">Save Student</button>
+		</form>
+	</div>
+	
+</body>
+</html>

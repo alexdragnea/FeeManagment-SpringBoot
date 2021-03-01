@@ -7,7 +7,7 @@ import net.dg.model.Student;
 public interface StudentService {
 	List<Student> getAllStudents();
 	void saveStudent(Student student);
-	Student getStudentById(int id);
-	void deleteStudentById(int id);
+	Student getStudentByRollNo(int id);
+	void deleteStudentByRollNo(int id);
 	
 } 
