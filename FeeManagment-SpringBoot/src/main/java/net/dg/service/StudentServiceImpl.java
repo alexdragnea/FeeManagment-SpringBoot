@@ -46,4 +46,10 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
+	@Override
+	public List<Student> getDueFeeStudents() {
+		
+		return studentRepository.dueFee();
+	}
+
 }

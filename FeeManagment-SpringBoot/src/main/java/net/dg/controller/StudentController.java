@@ -1,5 +1,7 @@
 package net.dg.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,14 @@ public class StudentController {
 		return "student";
 	}
 	
+	@GetMapping("/duefee")
+	public String viewDueFee(Model model) {
+		List<Student> dueFee = studentService.getDueFeeStudents();
+		model.addAttribute("Studentlist", dueFee);
+		return "student";
+		
+	}
+	
 	@GetMapping("/showNewStudentForm")
 	public String showNewStudentForm(Model model) {
 		
@@ -49,4 +59,6 @@ public class StudentController {
 		  this.studentService.deleteStudentByRollNo(rollno);
 		  return "redirect:/students";
 	}
+	
+	
 }

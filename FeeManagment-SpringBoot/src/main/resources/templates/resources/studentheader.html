@@ -17,7 +17,7 @@ body {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 11px 16px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -34,9 +34,9 @@ body {
 
 .topnav input[type=number] {
   float: left;
-  padding: 6px;
+  padding: 3px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 20px;
   border: none;
   font-size: 17px;
 }
@@ -46,9 +46,9 @@ body {
 
 <div class="topnav">
  <a href="https://github.com/alexdg722">Github</a>
-  <a th:href = "@{/}">Home</a>
+  <a th:href = "@{/students}">Home</a>
   <a th:href = "@{/showNewStudentForm}"> Add Student </a>
-    <a th:href = "@{/dueFee}"> Due Fee </a>
+    <a th:href = "@{/duefee}"> Due Fee </a>
   <a th:href = "@{/logout}" style="color:rgb(128, 255, 255);"><strong>Logout</strong></a>
   <form th:action="@{/search}" method="get">
   <input id="search" type="number" placeholder="Search by id..." name="id" required>
