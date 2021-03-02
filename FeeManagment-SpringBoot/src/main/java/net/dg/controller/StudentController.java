@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import net.dg.model.Student;
 import net.dg.repository.StudentRepository;
 import net.dg.service.StudentService;
@@ -59,6 +62,16 @@ public class StudentController {
 		  this.studentService.deleteStudentByRollNo(rollno);
 		  return "redirect:/students";
 	}
+	
+	@GetMapping("/showFormForUpdateStudent/{rollno}")
+	public String showFormForUpdate(@PathVariable( value = "rollno") int rollno, Model model) {
+		
+		Student student = studentService.getStudentByRollNo(rollno);
+		model.addAttribute("student", student);
+		return "update_student";
+	
+	}
+	
 	
 	
 }

@@ -51,5 +51,11 @@ public class StudentServiceImpl implements StudentService {
 		
 		return studentRepository.dueFee();
 	}
+	
+	public List<Student> listSearch(){
+			
+		return studentRepository.search();
+	
+	}
 
 }
