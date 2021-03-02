@@ -32,7 +32,7 @@ body {
   color: white;
 }
 
-.topnav input[type=number] {
+.topnav input[type=text] {
   float: left;
   padding: 3px;
   margin-top: 8px;
@@ -50,8 +50,8 @@ body {
   <a th:href = "@{/showNewStudentForm}"> Add Student </a>
     <a th:href = "@{/duefee}"> Due Fee </a>
   <a th:href = "@{/logout}" style="color:rgb(128, 255, 255);"><strong>Logout</strong></a>
-  <form th:action="@{/search}" method="get">
-  <input id="search" type="number" placeholder="Search by id..." name="id" required>
+  <form th:action="@{/students}" method="get">
+  <input id="txtSearch" type="text" placeholder="Search..." name="keyword" required>
   <input type="submit" style="height: 0px; width: 0px; border: none; padding: 0px; "   hidefocus="true" />
   </form>
 </div>

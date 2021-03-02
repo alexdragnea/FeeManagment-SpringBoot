@@ -26,8 +26,14 @@ public class StudentController {
 	private StudentRepository studentRepository;
 	
 	@GetMapping("/students")
-	public String viewHomePage(Model model) {
+	public String viewHomePage(Model model, String keyword) {
+		
+		if(keyword !=null) {
+			model.addAttribute("Studentlist", studentService.findByKeyword(keyword));
+		}
+		else {
 		model.addAttribute("Studentlist", studentService.getAllStudents());
+		}
 		return "student";
 	}
 	
@@ -71,6 +77,8 @@ public class StudentController {
 		return "update_student";
 	
 	}
+	
+
 	
 	
 	

@@ -51,11 +51,15 @@ public class StudentServiceImpl implements StudentService {
 		
 		return studentRepository.dueFee();
 	}
+
+	@Override
+	public List<Student> findByKeyword(String keyword) {
 	
-	public List<Student> listSearch(){
-			
-		return studentRepository.search();
-	
+		return studentRepository.findByKeyword(keyword);
 	}
+
+
+	
+	
 
 }
