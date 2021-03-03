@@ -22,8 +22,15 @@ public class AccountantController {
 	private AccountatRepository accountantRepository;
 	
 	@GetMapping("/accountants")
-	private String viewHomePage(Model model) {
-		model.addAttribute("Accountantlist", accountantService.getAllAccountants());
+	private String viewHomePage(Model model, String keyword) {
+		
+		if(keyword != null) {
+			model.addAttribute("Accountantlist", accountantService.findByKeyboard(keyword));
+		}
+		else {
+			model.addAttribute("Accountantlist", accountantService.getAllAccountants());
+		}
+
 		return "accountant";
 	}
 	

@@ -23,12 +23,6 @@ public class AccountantServiceImpl implements AccountantService {
 	}
 
 	@Override
-	public List<Accountant> findByKeyboard(String keyboard) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void saveAccountant(Accountant accountant) {
 		
 		this.accountantRepository.save(accountant);
@@ -53,6 +47,12 @@ public class AccountantServiceImpl implements AccountantService {
 	public void deleteAccountantById(int id) {
 		this.accountantRepository.deleteById(id);
 
+	}
+	
+	@Override
+	public List<Accountant> findByKeyboard(String keyboard) {
+		// TODO Auto-generated method stub
+		return accountantRepository.findByKeyword(keyboard);
 	}
 
 	
