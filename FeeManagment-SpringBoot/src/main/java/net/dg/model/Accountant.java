@@ -21,16 +21,12 @@ public class Accountant {
 	@Column(name = "last_name")
 	private String lastname;
 	
-	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "password")
 	private String password;
 	
-	@Column(name ="address")
 	private String address;
 	
-	@Column(name = "contact")
 	private String contact;
 
 	public int getId() {

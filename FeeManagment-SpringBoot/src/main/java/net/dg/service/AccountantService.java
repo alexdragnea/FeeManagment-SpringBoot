@@ -5,8 +5,9 @@ import net.dg.model.Accountant;
 
 public interface AccountantService {
 	List<Accountant> getAllAccountants();
+	List<Accountant> findByKeyboard(String keyboard);
 	void saveAccountant(Accountant accountant);
-	void deleteAccountantById(int id);
 	Accountant getAccountantById(int id);
+	void deleteAccountantById(int id);
 	
 }

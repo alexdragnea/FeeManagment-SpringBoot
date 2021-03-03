@@ -15,35 +15,46 @@ public class AccountantServiceImpl implements AccountantService {
 	@Autowired
 	private AccountatRepository accountantRepository;
 	
+	
 	@Override
 	public List<Accountant> getAllAccountants() {
-		// TODO Auto-generated method stub
+		
 		return accountantRepository.findAll();
 	}
 
 	@Override
+	public List<Accountant> findByKeyboard(String keyboard) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public void saveAccountant(Accountant accountant) {
+		
 		this.accountantRepository.save(accountant);
 		
 	}
 
 	@Override
-	public void deleteAccountantById(int id) {
-		this.accountantRepository.deleteById(id);
-		
-	}
-
-	@Override
 	public Accountant getAccountantById(int id) {
+		
 		Optional<Accountant> optional = accountantRepository.findById(id);
 		Accountant accountant = null;
 		if(optional.isPresent()) {
 			accountant = optional.get();
-		}
+		} 
 		else {
-			throw new RuntimeException(" Accountant with id: " + id + " not found");
+			 throw new RuntimeException(" Accountant with id: " + id + " not found");
 		}
 		return accountant;
 	}
+
+	@Override
+	public void deleteAccountantById(int id) {
+		this.accountantRepository.deleteById(null);
+
+	}
+
+	
 
 }

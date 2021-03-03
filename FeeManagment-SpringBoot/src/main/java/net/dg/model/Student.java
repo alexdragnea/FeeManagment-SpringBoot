@@ -20,6 +20,7 @@ public class Student {
 	private String course;
 	private int fee, paid, due;
 	private String address, contact;
+	
 	public int getRollno() {
 		return rollno;
 	}

@@ -19,8 +19,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer>,
 	@Query(value = "SELECT * FROM student s WHERE s.name like %:keyword% "
 			+ "or s.email like %:keyword% "
 			+ "or s.course like %:keyword% "
-			+ "or s.address like %:keyword% "
-			+ "or s.contact like %:keyword% ",
+			+ "or s.address like %:keyword% ",
 			nativeQuery = true)
 	List<Student> findByKeyword(@Param("keyword") String keyword);
 	
