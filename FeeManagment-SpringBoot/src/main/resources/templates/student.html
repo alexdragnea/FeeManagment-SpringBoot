@@ -48,10 +48,9 @@
      <td th:text="${student.address}"></td>
      <td th:text="${student.contact}"></td>
    
-
      
      <td> <a th:href="@{/showFormForUpdateStudent/{id}(id=${student.rollno})}" class="btn btn-primary">Update</a>
-         <a th:href="@{/deleteStudent/{id}(id=${student.rollno})}" class="btn btn-danger">Delete</a>
+          <a th:href="@{/deleteStudent/{id}(id=${student.rollno})}" class="btn btn-danger">Delete</a>
      </td>
     </tr>
     

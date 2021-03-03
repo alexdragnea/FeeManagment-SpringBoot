@@ -51,7 +51,7 @@ public class AccountantServiceImpl implements AccountantService {
 
 	@Override
 	public void deleteAccountantById(int id) {
-		this.accountantRepository.deleteById(null);
+		this.accountantRepository.deleteById(id);
 
 	}
 

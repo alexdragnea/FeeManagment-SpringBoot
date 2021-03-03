@@ -9,21 +9,23 @@
  crossorigin="anonymous">
 </head>
 <body>
-<div th:include="./resources/studentheader.html"></div>
+<div th:include="./resources/accountantheader.html"></div>
 
 <div class="container my-1">
- <h1 style="color:rgb(0, 0, 0);">Students</h1>
+ <h1 style="color:rgb(0, 0, 0);">Accountants</h1>
+
+ 
   <table class="table table-bordered">
    <thead>
     <tr>
      
 	 <th>Id</th>
-	 <th>First Name</th>
-	 <th>Last Name</th>
+	 <th>Name</th>
 	 <th>Email</th>
 	 <th>Password</th>
 	 <th>Address</th>
 	 <th>Contact</th>
+	 <th>Actions</th>
      
     </tr>
    </thead>
@@ -32,25 +34,26 @@
   <tr th:if="${Accountantlist.empty}">
             <td colspan="10" style="text-align:center;"> No Accountants Available.</td>
         </tr>
-        
-     <tr th:each="accountant : $Accountantlist}">
+     
+     <tr th:each="accountant : ${Accountantlist}">
      <td th:text="${accountant.id}"></td>
-     <td th:text="${accountant.first_name}"></td>
-     <td th:text="${accountant.last_name}"></td>
-     <td th:text="${accountant.password}"></td>
+     <td th:text="${accountant.firstname + ' ' + accountant.lastname}"></td>
+     <td th:text="${accountant.email}"></td>
+     <td> ******** </td>
      <td th:text="${accountant.address}"></td>
      <td th:text="${accountant.contact}"></td>
    
 
-     
      <td> <a th:href="@{/showFormForUpdateAccountant/{id}(id=${accountant.id})}" class="btn btn-primary">Update</a>
-         <a th:href="@{/deleteAccountant/{id}(id=${accountant.id})}" class="btn btn-danger">Delete</a>
+          <a th:href="@{/deleteAccountant/{id}(id=${accountant.id})}" class="btn btn-danger">Delete</a>
      </td>
     </tr>
     
+    
    </tbody>
   </table>
-   <div align="right"><a th:href = "@{/showNewAccountantForm}" class="btn btn-primary"> Add Accountant </a></div>
+  <div align="center"><a th:href = "@{/showNewAccountantForm}" class="btn btn-primary"> Add Accountant </a></div>
+   
 
 <div th:include="./resources/footer.html"></div>
 </body>
