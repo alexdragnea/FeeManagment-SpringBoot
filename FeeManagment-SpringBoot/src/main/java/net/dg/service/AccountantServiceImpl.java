@@ -55,6 +55,18 @@ public class AccountantServiceImpl implements AccountantService {
 		return accountantRepository.findByKeyword(keyboard);
 	}
 
+	@Override
+	public String hashPassword(String password_plaintext) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean checkPassword(String password_plaintext, String stored_hash) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 
 }

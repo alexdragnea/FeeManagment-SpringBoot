@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "accountant")
@@ -17,6 +20,7 @@ public class Accountant {
 	
 	@Column(name = "first_name")
 	private String firstname;
+	
 	
 	@Column(name = "last_name")
 	private String lastname;
