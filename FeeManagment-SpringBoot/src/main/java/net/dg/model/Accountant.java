@@ -1,14 +1,19 @@
 package net.dg.model;
 
+import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
-
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "accountant")
@@ -32,6 +37,32 @@ public class Accountant {
 	private String address;
 	
 	private String contact;
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "users_roles",
+			joinColumns = @JoinColumn(
+		            name = "user_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(
+				            name = "role_id", referencedColumnName = "id"))
+	
+	private Collection<Role> roles;
+
+	
+	public Accountant(String firstname, String lastname, String email, String password, String address, String contact,
+			Collection<Role> roles) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.address = address;
+		this.contact = contact;
+		this.roles = roles;
+	}
+	
+	public Accountant() {
+	}
 
 	public int getId() {
 		return id;
@@ -89,5 +120,12 @@ public class Accountant {
 		this.contact = contact;
 	}
 	
+	public Collection<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Collection<Role> roles) {
+		this.roles = roles;
+	}
 	
 }

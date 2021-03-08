@@ -1,7 +1,5 @@
 package net.dg.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,9 +62,9 @@ public class AccountantController {
 		return "update_accountant";
 	}
 	
-	@GetMapping("/loginaccountant")
+	@GetMapping("/admin")
 	public String login() {
-		return "loginaccountant";
+		return "loginadmin";
 	}
 	
 	

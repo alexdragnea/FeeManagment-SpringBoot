@@ -17,4 +17,6 @@ public interface AccountatRepository extends JpaRepository<Accountant, Integer>,
 			+ "or a.email like %:keyword% ",
 			nativeQuery = true)
 	List<Accountant> findByKeyword(@Param("keyword") String keyword);
+	
+	Accountant findByEmail(String email);
 }
