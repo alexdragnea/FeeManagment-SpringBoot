@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import net.dg.model.Accountant;
 import net.dg.repository.AccountatRepository;
 import net.dg.service.AccountantService;
 
 
 @Controller
+@RequestMapping
 public class AccountantController {
 
 	@Autowired
@@ -61,12 +64,5 @@ public class AccountantController {
 		model.addAttribute("accountant", accountant);
 		return "update_accountant";
 	}
-	
-	@GetMapping("/admin")
-	public String login() {
-		return "loginadmin";
-	}
-	
-	
-	
+		
 }

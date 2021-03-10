@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Accountants</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+</head>
+<body>
+<div th:include="./resources/accountantheader.html"></div>
+
+<div class="container my-1">
+ <h1 style="color:rgb(0, 0, 0);">Accountants</h1>
+
+ 
+  <table class="table table-bordered">
+   <thead>
+    <tr>
+     
+	 <th>Id</th>
+	 <th>Name</th>
+	 <th>Email</th>
+	 <th>Password</th>
+	 <th>Address</th>
+	 <th>Contact</th>
+	 <th>Actions</th>
+     
+    </tr>
+   </thead>
+   <tbody>
+
+  <tr th:if="${Accountantlist.empty}">
+            <td colspan="10" style="text-align:center;"> No Accountants Available.</td>
+        </tr>
+     
+     <tr th:each="accountant : ${Accountantlist}">
+     <td th:text="${accountant.id}"></td>
+     <td th:text="${accountant.firstname + ' ' + accountant.lastname}"></td>
+     <td th:text="${accountant.email}"></td>
+     <td> ******** </td>
+     <td th:text="${accountant.address}"></td>
+     <td th:text="${accountant.contact}"></td>
+   
+
+     <td> <a th:href="@{/showFormForUpdateAccountant/{id}(id=${accountant.id})}" class="btn btn-primary">Update</a>
+          <a th:href="@{/deleteAccountant/{id}(id=${accountant.id})}" class="btn btn-danger">Delete</a>
+     </td>
+    </tr>
+    
+    
+   </tbody>
+  </table>
+  <div align="center"><a th:href = "@{/showNewAccountantForm}" class="btn btn-primary"> Add Accountant </a></div>
+   
+
+<div th:include="./resources/footer.html"></div>
+</body>
+</html>

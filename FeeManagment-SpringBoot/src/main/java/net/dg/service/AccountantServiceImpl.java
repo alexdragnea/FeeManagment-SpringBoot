@@ -41,7 +41,7 @@ public class AccountantServiceImpl implements AccountantService {
 	public Accountant saveAccountant(Accountant accountantDTO) {
 		Accountant accountant = new Accountant(accountantDTO.getFirstname(), 
 				accountantDTO.getLastname(), accountantDTO.getEmail(),
-				passwordEncoder.encode(accountantDTO.getPassword()), accountantDTO.getAddress(), accountantDTO.getContact(), Arrays.asList(new Role("ROLE_USER")));
+				passwordEncoder.encode(accountantDTO.getPassword()), accountantDTO.getAddress(), accountantDTO.getContact(), Arrays.asList(new Role("USER")));
 		
 		return accountantRepository.save(accountant);
 	}
@@ -81,7 +81,5 @@ public class AccountantServiceImpl implements AccountantService {
 		// TODO Auto-generated method stub
 		return accountantRepository.findByKeyword(keyboard);
 	}
-	
-	
 
 }

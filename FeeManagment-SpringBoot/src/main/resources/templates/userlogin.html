@@ -13,9 +13,10 @@
 <body>
 
 
+
 <div class="container-fluid text-center">
     
-    <form th:action="@{/admin_login}" method="post" style="max-width: 400px; margin: 0 auto;">
+    <form th:action="@{/user_login}" method="post" style="max-width: 400px; margin: 0 auto;">
      
         <div th:if="${param.error}">
             <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
@@ -26,7 +27,7 @@
         </div>
          
         <div class="border border-secondary p-3 rounded">
-            <p>Admin Panel</p>
+            <p>Accountant Panel</p>
             <p>
                 <input type="email" name="username" class="form-control" placeholder="E-mail" required autofocus/>
             </p>
