@@ -21,3 +21,5 @@ Each accountant can add students to their courses and perform CRUD operations an
 # Pictures
 
 <img src="https://i.imgur.com/viWlj7d.png">
+<img src="https://imgur.com/2DRWnLG.png">
+
