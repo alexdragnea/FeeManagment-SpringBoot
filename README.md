@@ -20,4 +20,4 @@ Each accountant can add students to their courses and perform CRUD operations an
 
 # Pictures
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="viWlj7d"><a href="https://imgur.com/viWlj7d">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+[img]https://i.imgur.com/viWlj7d.png[/img]
