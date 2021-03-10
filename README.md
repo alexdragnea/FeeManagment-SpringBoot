@@ -7,8 +7,8 @@ There is only one Admin user in memory build that can add accountants and studen
 Each accountant can add students to their courses and perform CRUD operations and search based on names, emails and so on.
 
  # In Memory Auth 
-  -username : admin@gmail.com
-  -password : admin
+  *username : admin@gmail.com
+  *password : admin
 
 # Technologies
 - Spring Boot 2.4.3
