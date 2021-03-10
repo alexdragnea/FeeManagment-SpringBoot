@@ -13,7 +13,7 @@ Each accountant can add students to their courses and perform CRUD operations an
 # Technologies
 - Spring Boot 2.4.3
 - Thymeleaf Engine 
-- Spring Security
+- Spring Security with two configuration for admin and user role
 - Html & CSS 
 - Bootstrap 4.1.3
 - MySQL Server
