@@ -19,7 +19,7 @@ Each accountant can add students to their courses and perform CRUD operations an
 - MySQL Server
 
 # Pictures
-<a href="https://ibb.co/6WjwC6h"><img src="https://i.ibb.co/cr43nz5/login-page.png" alt="1" border="0"></a>
+<a href="https://ibb.co/6WjwC6h"><img src="https://imgur.com/a/WjqbDgr" alt="1" border="0"></a>
 
 <a href="https://ibb.co/6WjwC6h"><img src="https://i.ibb.co/VCCJFgx/studentpage.png" alt="1" border="0"></a>
 <a href="https://ibb.co/VCCJFgx"><img src="https://i.ibb.co/VCCJFgx/studentpage.png" alt="2" border="0"></a>
