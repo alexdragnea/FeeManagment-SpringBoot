@@ -19,15 +19,5 @@ Each accountant can add students to their courses and perform CRUD operations an
 - MySQL Server
 
 # Pictures
-<a href="https://ibb.co/6WjwC6h"><img src="https://imgur.com/a/WjqbDgr" alt="1" border="0"></a>
 
-<a href="https://ibb.co/6WjwC6h"><img src="https://i.ibb.co/VCCJFgx/studentpage.png" alt="1" border="0"></a>
-<a href="https://ibb.co/VCCJFgx"><img src="https://i.ibb.co/VCCJFgx/studentpage.png" alt="2" border="0"></a>
-
-<a href="https://ibb.co/q17B8Jn"><img src="https://i.ibb.co/q17B8Jn/accountantpage.png" alt="3" border="0"></a>
-
-<a href="https://ibb.co/wr3j3Fw"><img src="https://i.ibb.co/wr3j3Fw/add-student.png" alt="4" border="0"></a>
-
-<a href="https://ibb.co/VwHvGJS"><img src="https://i.ibb.co/VwHvGJS/403.png" alt="5" border="0"></a>
-
-<a href="https://ibb.co/cXsTHd3"><img src="https://i.ibb.co/sJX3GrR/404.png" alt="6" border="0"></a>
+<blockquote class="imgur-embed-pub" lang="en" data-id="viWlj7d"><a href="https://imgur.com/viWlj7d">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
