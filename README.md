@@ -1,8 +1,9 @@
 # FeeManagment-SpringBoot
 
 # About
-Fee Managment System using Spring Boot, Spring Security, Hibernate, Bootstrap and Thymeleaf engine.
-This project is a demo for enrolling students to different courses and keeping track of the fees.There are 2 types of users Admin and Accountant.
+Fee Managment System using Spring Boot, Spring Security, Bootstrap and Thymeleaf engine.
+This project is a demo for enrolling students to different courses and keeping track of the fees.
+There are 2 types of users Admin and Accountant.
 There is only one Admin user in memory build that can add accountants and students and perform CURD operations and search based on names, emails and so on.
 Each accountant can add students to their courses and perform CRUD operations and search based on names, emails and so on.
 
