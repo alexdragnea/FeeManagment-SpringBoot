@@ -20,4 +20,4 @@ Each accountant can add students to their courses and perform CRUD operations an
 
 # Pictures
 
-<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+<img src="https://imgur.com/viWlj7d" alt="W3Schools.com">
