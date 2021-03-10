@@ -20,13 +20,13 @@ public class AccountantController {
 
 	@Autowired
 	private AccountantService accountantService;
-	
+
 	@Autowired
 	private AccountatRepository accountantRepository;
-	
+
 	@GetMapping("/accountants")
 	private String viewHomePage(Model model, String keyword) {
-		
+
 		if(keyword != null) {
 			model.addAttribute("Accountantlist", accountantService.findByKeyboard(keyword));
 		}
@@ -36,33 +36,38 @@ public class AccountantController {
 
 		return "accountant";
 	}
-	
+
 	@GetMapping("/showNewAccountantForm")
 	private String showNewAccountantForm(Model model) {
-		
+
 		Accountant accountant = new Accountant();
 		model.addAttribute("accountant", accountant);
-		
+
 		return "new_accountant";
 	}
-	
+
 	@PostMapping("/saveAccountant")
 	public String saveAccountant(@ModelAttribute("accountant") Accountant accountant) {
 		accountantService.saveAccountant(accountant);
 		return "redirect:/accountants";
 	}
-	
+
 	@GetMapping("deleteAccountant/{id}")
 	public String deleteStudent(@PathVariable (value = "id") int id) {
 		this.accountantService.deleteAccountantById(id);
 		return "redirect:/accountants";
 	}
-	
+
 	@GetMapping("/showFormForUpdateAccountant/{id}")
 	public String showFormForUpdate(@PathVariable(value = "id") int id, Model model) {
 		Accountant accountant = accountantService.getAccountantById(id);
 		model.addAttribute("accountant", accountant);
 		return "update_accountant";
 	}
-		
+	
+	@GetMapping("/")
+	public String viewLoginPages() {
+		return "user_login";
+	}
+
 }

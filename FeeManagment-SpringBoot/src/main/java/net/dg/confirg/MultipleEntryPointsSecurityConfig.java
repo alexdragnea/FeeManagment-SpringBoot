@@ -37,77 +37,106 @@ public class MultipleEntryPointsSecurityConfig {
 		public AdminConfig() {
 			super();
 		}
-		
+
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-            http.requestMatcher(new AntPathRequestMatcher("/admin_login*"))
-            		.authorizeRequests().antMatchers(
-	                "/accountants/**").hasRole("ADMIN")
-                    .anyRequest().authenticated()
-                    .and()
-                    .formLogin()
-                    .loginPage("/admin_login")
-                    .loginProcessingUrl("/admin_login")
-                    .defaultSuccessUrl("/accountants")
-                    .permitAll()
-                    .and()
-                    .logout()
-                    .permitAll();
-        }
-       
-		
-		 @Override
-		  protected void configure(AuthenticationManagerBuilder auth) throws Exception
-		  {
-		    String password = passwordEncoder().encode("admin");
-		    auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("admin@gmail.com").password(password).roles("ADMIN");
-		  }
-	}
-	
-		@Configuration
-		@Order(2)
-		public static class UserConfig extends WebSecurityConfigurerAdapter {
-			public UserConfig() {
-				super();
-			}
-
-			@Autowired
-			private AccountantService accountantService;
-
-			@Bean
-			public DaoAuthenticationProvider authenticationProvider() {
-				DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
-				auth.setUserDetailsService(accountantService);
-				auth.setPasswordEncoder(passwordEncoder());
-				return auth;
-			}
-			
-			 @Override
-		        protected void configure(HttpSecurity http) throws Exception {
-		            http.requestMatcher(new AntPathRequestMatcher("/**"))
-		            .authorizeRequests().antMatchers(
-		            		"/accountants/**").hasRole("ADMIN")
-		                    .anyRequest().authenticated()
-		                    .and()
-		                    .formLogin()
-		                    .loginPage("/user_login")
-		                    .defaultSuccessUrl("/students")
-		                    .permitAll()
-		                    .and()
-		                    .logout()
-		                    .permitAll();
-		        }
+			http.requestMatcher(new AntPathRequestMatcher("/admin_login*"))
+			.authorizeRequests().antMatchers(
+					"/accountants/**").hasRole("ADMIN")
+			.and()
+			.authorizeRequests().antMatchers(
+					"/js/**",
+					"/css/**",
+					"/images/**").permitAll()
+			.anyRequest().authenticated()
+			.and()
+			.formLogin()
+			.loginPage("/admin_login")
+			.loginProcessingUrl("/admin_login")
+			.defaultSuccessUrl("/accountants", true)
+			.permitAll()
+			.and()
+			.logout()
+			.invalidateHttpSession(true)
+			.clearAuthentication(true)
+			.deleteCookies("JSESSIONID")
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessUrl("/admin_login?logout")
+			.permitAll()
+			.and()
+			.exceptionHandling()
+			.accessDeniedPage("/403");
 
 
-			
-			
-			@Override
-			protected void configure(AuthenticationManagerBuilder auth) throws Exception
-			{
+		}
 
-				auth.authenticationProvider(authenticationProvider());
-			}
+
+		@Override
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception
+		{
+			String password = passwordEncoder().encode("admin");
+			auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("admin@gmail.com").password(password).roles("ADMIN");
 		}
 	}
+
+	@Configuration
+	@Order(2)
+	public static class UserConfig extends WebSecurityConfigurerAdapter {
+		public UserConfig() {
+			super();
+		}
+
+		@Autowired
+		private AccountantService accountantService;
+
+		@Bean
+		public DaoAuthenticationProvider authenticationProvider() {
+			DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+			auth.setUserDetailsService(accountantService);
+			auth.setPasswordEncoder(passwordEncoder());
+			return auth;
+		}
+
+		@Override
+		protected void configure(HttpSecurity http) throws Exception {
+			http.requestMatcher(new AntPathRequestMatcher("/**"))
+			.authorizeRequests().antMatchers(
+					"/accountants/**").hasRole("ADMIN")
+			.and()
+			.authorizeRequests().antMatchers(
+					"/js/**",
+					"/css/**",
+					"/images/**").permitAll()
+			.anyRequest().authenticated()
+			.and()
+			.formLogin()
+			.loginPage("/user_login")
+			.defaultSuccessUrl("/students", true)
+			.permitAll()
+			.and()
+			.logout()
+			.invalidateHttpSession(true)
+			.clearAuthentication(true)
+			.deleteCookies("JSESSIONID")
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessUrl("/user_login?logout")
+			.permitAll()
+			.and()
+			.exceptionHandling()
+			.accessDeniedPage("/403");
+
+		}
+
+
+
+
+		@Override
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception
+		{
+
+			auth.authenticationProvider(authenticationProvider());
+		}
+	}
+}
 
 

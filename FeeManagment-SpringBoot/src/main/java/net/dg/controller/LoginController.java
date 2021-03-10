@@ -11,12 +11,17 @@ public class LoginController {
 
 	@RequestMapping("/admin_login")
 	public String AdminLogin() {
-		return "loginadmin";
+		return "adminlogin";
 	}
-	
+
 	@RequestMapping("/user_login")
 	public String UserLogin() {
 		return "userlogin";
+	}
+
+	@GetMapping("/403")
+	public String Error403() {
+		return "error403";
 	}
 
 }
